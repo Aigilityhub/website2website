@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aigility Hub | Humanizing AI</title>
-<meta name="description" content="AI is moving fast. Your organization still moves at the speed of humans. Aigility Hub helps leaders understand what AI means for their organization, decide what makes sense, and take the next useful step.">
+<meta name="description" content="It’s time to move at the speed of humans. Aigility Hub helps leaders make sense of AI, decide what matters, and take the next useful step.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -24,11 +24,12 @@ section[id],div[id]{scroll-margin-top:84px}
 h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.03em}
 .hl{display:inline-block;background:var(--orange);color:#fff;border:3px solid var(--ink);border-radius:14px;padding:0 .16em .06em;box-shadow:6px 6px 0 var(--ink)}
 .ico{display:block;width:34px;height:34px;margin-bottom:10px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.box .ico{width:38px;height:38px;margin-bottom:14px;color:var(--orange-text)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--ink);border-radius:999px;padding:10px 18px;background:var(--ink);color:var(--paper);cursor:pointer;transition:transform .15s, box-shadow .15s;white-space:nowrap;font-family:var(--body)}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
 .btn.alt{background:var(--orange);color:#fff}
 .btn.ghost{background:transparent;color:var(--ink)}
+.btn.big{font-size:17px;padding:14px 24px}
+.center{text-align:center}
 
 /* nav */
 nav.top{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--paper)}
@@ -39,144 +40,116 @@ nav.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
 .links a:hover{color:var(--lilac)}
 .spacer{flex:1}
 nav.top .btn{border-color:var(--paper)}
-nav.top .btn.ghost{color:var(--paper)}
 nav.top .btn:hover{box-shadow:4px 4px 0 var(--orange)}
-@media (max-width:860px){.links{display:none}nav.top .btn.ghost{display:none}nav.top .wrap{gap:12px;padding:0 16px}nav.top .btn{padding:8px 14px;font-size:14px}}
+@media (max-width:860px){.links{display:none}nav.top .wrap{gap:12px;padding:0 16px}nav.top .btn{padding:8px 14px;font-size:14px}}
 
-/* hero */
-.hero{padding-top:56px;padding-bottom:40px;position:relative}
+/* A: header */
+.hero{padding-top:56px;padding-bottom:48px;position:relative}
 .eyebrow{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);margin-bottom:22px}
-.hero h1{font-size:clamp(44px,8.4vw,124px);line-height:.94}
+.hero h1{font-size:clamp(44px,7vw,100px);line-height:.96;max-width:980px}
 .hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:40px;flex-wrap:wrap}
-.hero-row p{font-size:clamp(18px,2vw,22px);max-width:560px;font-weight:500}
-.hero-row .ctas{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-.underline{font-weight:700;text-decoration:none;border-bottom:3px solid var(--orange);padding-bottom:2px}
-.sticker{position:absolute;right:2%;top:30px;width:160px;height:160px;border-radius:50%;background:var(--lilac);border:3px solid var(--ink);display:grid;place-items:center;box-shadow:4px 4px 0 var(--ink);overflow:hidden}
-.sticker svg{position:absolute;inset:0;animation:spin 16s linear infinite}
+.hero-row .lead{font-size:clamp(18px,2vw,22px);max-width:600px;font-weight:500}
+.hero-row .lead + .lead{margin-top:10px;color:var(--muted)}
+.sticker{position:absolute;right:2%;top:30px;width:170px;height:170px;border-radius:50%;background:var(--lilac);border:3px solid var(--ink);display:grid;place-items:center;box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+.sticker svg{position:absolute;inset:0;animation:spin 22s linear infinite}
 .sticker b{font-family:var(--display);font-weight:400;font-size:24px;line-height:.95;text-align:center;color:var(--ink)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (max-width:860px){.wrap{padding:0 16px}.sticker{position:relative;right:auto;top:auto;width:124px;height:124px;margin:24px 0 0 auto}.sticker b{font-size:18px}.hero-row .ctas{align-items:flex-start}}
+@media (max-width:860px){.wrap{padding:0 16px}.sticker{position:relative;right:auto;top:auto;width:140px;height:140px;margin:24px 0 0 auto}.sticker b{font-size:19px}}
 @media (prefers-reduced-motion:reduce){.sticker svg,.marquee-track{animation:none!important}}
 
-/* wall */
-.wall-head{display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--ink);padding:14px 0;gap:12px;flex-wrap:wrap}
-.wall{position:relative;height:1400px;margin-bottom:24px;border:2px solid var(--ink);border-radius:28px;background:radial-gradient(circle at 1px 1px,rgba(61,37,24,.25) 1px,transparent 0) 0 0/24px 24px;overflow:hidden;touch-action:pan-y}
+/* B: logos */
+.logos{border-top:2px solid var(--ink);padding:40px 0 48px;text-align:center}
+.logos h2{font-size:clamp(24px,3vw,34px);margin:0 0 26px}
+.logo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px}
+.logo-row span{font-weight:700;font-size:17px;letter-spacing:-.01em;opacity:.5}
+
+/* C: wall */
+.wall-intro{border-top:2px solid var(--ink);padding-top:56px;padding-bottom:8px;text-align:center}
+.wall-intro h2{font-size:clamp(36px,5.4vw,72px);line-height:.98;margin:0}
+.wall-intro p{font-size:clamp(18px,2vw,22px);font-weight:500;margin-top:16px}
+.wall-head{display:flex;justify-content:space-between;align-items:center;padding:24px 0 14px;gap:12px;flex-wrap:wrap}
+.wall{position:relative;height:1180px;margin-bottom:24px;border:2px solid var(--ink);border-radius:28px;background:radial-gradient(circle at 1px 1px,rgba(61,37,24,.25) 1px,transparent 0) 0 0/24px 24px;overflow:hidden;touch-action:pan-y}
 .card{position:absolute;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:5px 5px 0 var(--ink);cursor:grab;user-select:none;transition:box-shadow .15s, transform .35s cubic-bezier(.2,.8,.2,1), left .5s cubic-bezier(.2,.8,.2,1), top .5s cubic-bezier(.2,.8,.2,1)}
 .card.dragging{cursor:grabbing;box-shadow:12px 12px 0 var(--ink);transition:box-shadow .15s;z-index:999}
 .card .tag{color:var(--muted);margin-bottom:10px}
-.card h3{font-size:26px;line-height:1.02;margin-bottom:8px}
-.card p{font-size:15px}
-.card.orange{background:var(--orange);color:#fff}.card.orange .tag{color:#fff;opacity:.85}
-.card.brown{background:var(--ink);color:var(--paper)}.card.brown .tag{color:var(--paper);opacity:.7}
-.card.lilac{background:var(--lilac)}
-.card.quote p{font-size:16px;font-weight:500}
-.card.quote cite{display:block;margin-top:12px;font-style:normal;font-weight:700;font-size:14px}
-.card.quote cite span{display:block;font-weight:500;color:var(--muted)}
-.card .big{font-family:var(--display);font-size:76px;line-height:.9;letter-spacing:-.04em}
-.card.photo{padding:0;overflow:hidden;background:var(--orange)}
-.card.photo img{display:block;width:100%;height:auto;margin-top:-30%;pointer-events:none}
-.card.photo .cap{position:absolute;left:12px;bottom:12px;background:var(--lilac);border:2px solid var(--ink);border-radius:999px;padding:4px 12px;font-weight:700;font-size:13px}
+.card h3{font-size:24px;line-height:1.05}
+.card.statement{background:var(--orange);color:#fff;text-align:center;padding:30px 26px}
+.card.statement .tag{color:#fff;opacity:.85}
+.card.statement h3{font-size:clamp(30px,3vw,42px);line-height:1}
+.cal .slot{display:flex;gap:10px;align-items:center;border-top:1px dashed rgba(61,37,24,.3);padding:7px 0;font-size:13px}
+.cal .slot b{font-family:var(--mono);font-size:11px;color:var(--muted);width:38px;flex:none;font-weight:500}
+.cal .slot span{flex:1;background:#efe8df;border-radius:6px;padding:4px 8px;color:var(--muted)}
+.cal .slot.think span{background:var(--orange);color:#fff;font-weight:700;padding:12px 8px}
+.inbox .zero{font-family:var(--display);font-size:52px;line-height:1}
+.inbox .pile{margin-top:10px;display:grid;gap:5px}
+.inbox .pile span{font-size:12px;background:#efe8df;border-radius:6px;padding:4px 8px;text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:2px;color:var(--muted)}
+.card.sticky{background:var(--lilac);border-radius:4px;padding:26px 20px}
+.card.sticky p{font-family:var(--display);font-size:26px;line-height:1.05}
+.card.lined{background:repeating-linear-gradient(#fff 0 27px,#d9cfc4 27px 28px);background-position:0 46px;padding-left:34px}
+.card.lined::before{content:"";position:absolute;left:22px;top:0;bottom:0;width:2px;background:var(--orange);opacity:.5}
+.card.lined h3{font-size:20px;margin-bottom:40px}
+.coffee{text-align:center}
+.coffee svg{width:96px;height:96px;margin:0 auto 6px;display:block}
+.coffee p{font-weight:700;font-size:15px}
+.agenda ol{list-style:none;display:grid;gap:6px;font-size:14px}
+.agenda li{display:flex;gap:8px}
+.agenda li b{font-family:var(--mono);font-weight:500;font-size:12px;color:var(--muted)}
+.agenda li.x{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:2px;color:var(--muted)}
+.card.slip{border-style:dashed;background:#fbf7f1}
+.card.slip p{font-family:var(--display);font-size:22px;line-height:1.05;margin:4px 0 12px}
+.card.slip .sign{font-size:13px;color:var(--muted);border-top:1px solid var(--ink);padding-top:6px}
 .nametag{padding:0;overflow:hidden;text-align:center}
 .nametag .top{background:var(--orange);color:#fff;padding:10px 12px 8px}
 .nametag .top b{font-family:var(--display);font-weight:400;font-size:30px;display:block;line-height:1}
 .nametag .name{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;font-size:30px;padding:18px 12px 6px}
+.nametag .say{font-family:var(--display);font-size:20px;line-height:1.05;padding:16px 14px 18px}
 .nametag .role{padding:0 12px 16px}
-.card .go{display:inline-block;margin-top:12px;font-weight:700;text-decoration:none;border-bottom:2px solid currentColor}
+.check p{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+.check i{display:inline-grid;place-items:center;width:28px;height:28px;border:2px solid var(--ink);border-radius:6px;font-style:normal;background:var(--lilac)}
+.card.nohype{background:var(--ink);color:var(--paper);text-align:center;padding:22px}
+.card.nohype p{font-family:var(--display);font-size:28px;letter-spacing:.02em}
+.card.sign{background:var(--orange);color:#fff;text-align:center;padding:14px}
+.card.sign p{font-family:var(--display);font-size:18px;letter-spacing:.04em}
+.card.arrow{background:transparent;border:0;box-shadow:none;padding:6px}
+.card.arrow svg{width:150px;height:90px;display:block;fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.card.arrow p{font-family:var(--display);font-size:26px;margin-top:4px}
+.card.polaroid{padding:10px 10px 14px;background:#fff}
+.card.polaroid::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(226,210,248,.85);border:1px solid rgba(61,37,24,.25);transform:rotate(-3deg)}
+.card.polaroid .ph{background:var(--orange);aspect-ratio:1/1;border-radius:6px;overflow:hidden;position:relative}
+.card.polaroid img{position:absolute;left:-8%;top:-24%;width:116%;height:auto;pointer-events:none}
+.card.polaroid p{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin-top:10px;color:var(--muted)}
+.card.ask{background:var(--lilac)}
+.card.ask h3{font-size:28px;line-height:1}
+.card.ask p{font-weight:600;margin:6px 0 16px;font-size:17px}
 @media (max-width:860px){
   .wall{height:auto;display:flex;flex-direction:column;gap:16px;padding:16px;background-size:20px 20px}
   .card{position:relative;left:auto!important;top:auto!important;width:auto!important;transform:none!important;cursor:default}
-  .card.photo img{margin-top:-25%}
+  .card.arrow{align-self:flex-start}
   #tidy{display:none}
 }
 
-/* marquee */
+/* D: ticker */
 .marquee{overflow:hidden;border-block:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:16px 0}
-.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 40s linear infinite}
-.marquee span{font-family:var(--display);font-size:28px;white-space:nowrap}
-.marquee span::after{content:"✳";margin-left:48px;color:var(--orange)}
+.marquee-track{display:flex;gap:28px;width:max-content;animation:scroll 40s linear infinite}
+.marquee span{font-family:var(--display);font-size:26px;white-space:nowrap}
+.marquee span::after{content:"→";margin-left:28px;color:var(--orange)}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* sections */
 section{padding:96px 0;border-top:2px solid var(--ink)}
-h2{font-size:clamp(38px,6vw,84px);line-height:.95;margin:14px 0 28px}
+h2{font-size:clamp(38px,6vw,84px);line-height:.95;margin:14px 0 20px}
+.sub{font-size:clamp(19px,2vw,23px);font-weight:500;max-width:680px;margin-bottom:32px}
 @media (max-width:860px){section{padding:64px 0}}
-.beliefs{counter-reset:b}
-.belief{display:grid;grid-template-columns:90px 1fr 1fr;gap:24px;padding:26px 0;border-bottom:2px dashed rgba(61,37,24,.3);align-items:baseline}
-.belief::before{counter-increment:b;content:counter(b,decimal-leading-zero);font-family:var(--display);font-size:40px;color:var(--orange)}
-.belief .ai{font-size:18px;color:var(--muted)}
-.belief h3{font-size:clamp(22px,2.6vw,34px);line-height:1.08}
-.closer{margin-top:40px;font-family:var(--display);font-size:clamp(28px,4vw,56px);line-height:1.02}
-.closer span{color:var(--orange-text)}
-@media (max-width:760px){.belief{grid-template-columns:56px 1fr}.belief::before{font-size:28px;grid-row:span 2}}
 
-.compare{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
-.box{border:2px solid var(--ink);border-radius:24px;padding:32px;box-shadow:6px 6px 0 var(--ink);background:var(--card)}
-.box h3{font-size:clamp(28px,3vw,40px);margin-bottom:6px}
-.box .q{font-weight:700;font-size:19px;margin-bottom:20px}
-.box.dont{background:#e3d8ca}
-.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
-.chips li{border:2px solid var(--ink);border-radius:999px;padding:8px 16px;font-weight:600;text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:3px}
-.better{list-style:none;display:grid;gap:10px}
-.better li{border:2px solid var(--ink);border-radius:14px;padding:12px 16px;font-weight:600;font-size:18px}
-.better li.no{background:var(--lilac)}
-@media (max-width:860px){.compare{grid-template-columns:1fr}}
+/* E: AI can do more than ever */
+.better4{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px}
+.better4 article{border:2px solid var(--ink);border-radius:22px;background:var(--card);padding:26px;box-shadow:5px 5px 0 var(--ink)}
+.better4 .n{font-family:var(--display);font-size:38px;color:var(--orange);line-height:1}
+.better4 h3{font-size:clamp(22px,2.4vw,30px);line-height:1.05;margin:10px 0}
+.better4 p{color:var(--muted);font-size:17px}
+@media (max-width:760px){.better4{grid-template-columns:1fr}}
 
-.race{border:2px solid var(--ink);border-radius:24px;background:var(--card);padding:32px;box-shadow:6px 6px 0 var(--ink)}
-.lane{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;padding:12px 0}
-.lane b{font-family:var(--display);font-weight:400;font-size:22px}
-.track{height:48px;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--paper)}
-.bar{height:100%;width:0;display:flex;align-items:center;padding-left:14px;white-space:nowrap;overflow:hidden;font-size:20px;letter-spacing:.35em}
-.tech .bar{background:var(--ink);color:var(--paper)}
-.hum .bar{background:var(--orange);color:#fff}
-.race.in .tech .bar{animation:tech 2.2s cubic-bezier(.5,0,.2,1) forwards}
-.race.in .hum .bar{animation:hum 2.2s cubic-bezier(.3,.6,.4,1) forwards}
-@keyframes tech{to{width:100%}}
-@keyframes hum{to{width:32%}}
-.race-cap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:24px;align-items:flex-end}
-.race-cap p{font-size:19px;color:var(--muted);max-width:420px}
-.race-cap h3{font-size:clamp(26px,3.4vw,44px);max-width:620px;line-height:1.02}
-.replay{margin-top:16px;background:none;border:0;font:700 13px var(--body);color:var(--muted);cursor:pointer;text-decoration:underline}
-@media (max-width:760px){.lane{grid-template-columns:1fr;gap:6px}.race{padding:22px}}
-@media (prefers-reduced-motion:reduce){.tech .bar{width:100%!important;animation:none!important}.hum .bar{width:32%!important;animation:none!important}}
-
-.about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center}
-.about-photo{border:2px solid var(--ink);border-radius:28px;background:var(--orange);box-shadow:8px 8px 0 var(--ink);overflow:hidden;position:relative;aspect-ratio:5/4}
-.about-photo img{position:absolute;left:0;bottom:0;width:100%;height:auto}
-.about-photo em{position:absolute;top:16px;left:16px;font-style:normal;background:var(--lilac);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:700}
-.about p{font-size:18px;margin-bottom:14px}
-.about .big{font-size:clamp(20px,2vw,24px);font-weight:700}
-.facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
-.facts span{border:2px solid var(--ink);border-radius:999px;padding:8px 14px;font-weight:600;background:var(--card)}
-.facts span b{color:var(--orange-text)}
-.turn{font-family:var(--display);font-size:24px}
-@media (max-width:860px){.about{grid-template-columns:1fr;gap:28px}}
-
-.contact{text-align:center}
-.contact h2{font-size:clamp(52px,11vw,160px)}
-.contact .lead{font-size:clamp(18px,2vw,22px);font-weight:500;max-width:640px;margin:0 auto}
-.email-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center;margin:28px 0}
-.email{font-family:var(--display);font-size:clamp(22px,4vw,44px);text-decoration:none;border-bottom:4px solid var(--orange);word-break:break-all}
-.notes{max-width:720px;margin:56px auto 0;text-align:left;border:2px solid var(--ink);border-radius:24px;background:var(--card);padding:28px;box-shadow:6px 6px 0 var(--ink)}
-.notes h3{font-size:clamp(24px,3vw,34px);line-height:1.05}
-.notes p{color:var(--muted);margin:8px 0 18px}
-.notes .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.notes input[type=text],.notes input[type=email]{width:100%;font:500 16px var(--body);padding:12px 14px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink)}
-.notes label.c{display:flex;gap:10px;align-items:center;margin:14px 0;font-weight:600;cursor:pointer}
-.notes label.c input{width:20px;height:20px;accent-color:var(--orange)}
-.notes .msg{font-size:14px;color:var(--muted);min-height:1.4em;margin-top:10px}
-.notes .msg.err{color:#b4441a}
-@media (max-width:600px){.notes .row{grid-template-columns:1fr}}
-
-footer{background:var(--ink);color:var(--paper);padding:28px 0}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
-footer img{height:26px;display:block}
-footer .social{display:flex;gap:18px;flex-wrap:wrap}
-footer .social a{font-weight:600;text-decoration:none}
-footer .social a:hover{color:var(--lilac)}
-.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:999px;font-weight:600;transition:transform .3s;z-index:100}
-.toast.show{transform:translate(-50%,0)}
-
-/* one last thing: blame the bot */
+/* F: blame the bot */
 .last{text-align:center}
 .last h2{margin-bottom:10px}
 .arena{position:relative;height:540px;margin-top:36px;border:2px solid var(--ink);border-radius:32px;overflow:hidden;box-shadow:8px 8px 0 var(--ink);background:radial-gradient(circle at 18% 22%,var(--lilac) 0 90px,transparent 91px),radial-gradient(circle at 70% 88%,var(--paper) 0 120px,transparent 121px),radial-gradient(circle at 1px 1px,rgba(61,37,24,.28) 1px,transparent 0) 0 0/22px 22px,var(--orange);touch-action:pan-y;user-select:none}
@@ -203,8 +176,84 @@ footer .social a:hover{color:var(--lilac)}
 .landed h3{font-size:clamp(28px,4vw,40px);line-height:1}
 .landed p{margin:12px 0 18px;font-size:17px}
 .landed .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.after-arena{margin-top:28px}
 @media (max-width:860px){.stats{display:none}.arena{height:480px}.bot{width:80px;height:80px;margin:-40px 0 0 -40px}.arena-title{top:18px}}
 @media (prefers-reduced-motion:reduce){.bonk{animation-duration:.01s}}
+
+/* G: start with the human */
+.human{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.box{border:2px solid var(--ink);border-radius:24px;padding:32px;box-shadow:6px 6px 0 var(--ink);background:var(--card)}
+.box .ico{width:38px;height:38px;margin-bottom:14px;color:var(--orange-text)}
+.box h3{font-size:clamp(24px,2.6vw,32px);margin-bottom:16px}
+.better{list-style:none;display:grid;gap:10px}
+.better li{border:2px solid var(--ink);border-radius:14px;padding:12px 16px;font-weight:600;font-size:18px}
+.human .then{font-size:20px;font-weight:600;margin:20px 0 26px}
+@media (max-width:860px){.human{grid-template-columns:1fr;gap:24px}}
+
+/* H: AI value gap */
+.race{border:2px solid var(--ink);border-radius:24px;background:var(--card);padding:32px;box-shadow:6px 6px 0 var(--ink)}
+.lane{display:grid;grid-template-columns:190px 1fr;gap:18px;align-items:center;padding:12px 0}
+.lane b{font-family:var(--display);font-weight:400;font-size:20px}
+.track{height:48px;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--paper)}
+.bar{height:100%;width:0;display:flex;align-items:center;padding-left:14px;white-space:nowrap;overflow:hidden;font-size:20px;letter-spacing:.35em}
+.tech .bar{background:var(--ink);color:var(--paper)}
+.hum .bar{background:var(--orange);color:#fff}
+.race.in .tech .bar{animation:tech 2.2s cubic-bezier(.5,0,.2,1) forwards}
+.race.in .hum .bar{animation:hum 2.2s cubic-bezier(.3,.6,.4,1) forwards}
+@keyframes tech{to{width:100%}}
+@keyframes hum{to{width:32%}}
+.race-cap{margin-top:24px}
+.race-cap h3{font-size:clamp(26px,3.4vw,44px);line-height:1.02;max-width:900px}
+.race-cap p{font-size:20px;font-weight:600;margin-top:12px;color:var(--orange-text)}
+.replay{margin-top:16px;background:none;border:0;font:700 13px var(--body);color:var(--muted);cursor:pointer;text-decoration:underline}
+@media (max-width:760px){.lane{grid-template-columns:1fr;gap:6px}.race{padding:22px}}
+@media (prefers-reduced-motion:reduce){.tech .bar{width:100%!important;animation:none!important}.hum .bar{width:32%!important;animation:none!important}}
+
+/* I: about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.about .nametag{position:relative;border:2px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);background:var(--card);max-width:420px;width:100%}
+.about .nametag .top b{font-size:52px}
+.about .nametag .name{font-size:46px;padding:30px 16px 10px}
+.about .nametag .role{padding:0 16px 26px}
+.about .big{font-size:clamp(21px,2.2vw,26px);font-weight:700;margin-bottom:14px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.facts span{border:2px solid var(--ink);border-radius:999px;padding:8px 16px;font-weight:600;background:var(--card)}
+.turn{font-family:var(--display);font-size:24px;margin-top:24px}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}}
+
+/* J: contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(52px,11vw,160px)}
+.contact .lead{font-size:clamp(19px,2vw,23px);font-weight:500;max-width:640px;margin:0 auto}
+.contact .lead + .lead{color:var(--muted);margin-top:6px}
+.email-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center;margin:28px 0}
+.email{font-family:var(--display);font-size:clamp(22px,4vw,44px);text-decoration:none;border-bottom:4px solid var(--orange);word-break:break-all}
+
+/* K: human notes */
+.notes{max-width:760px;margin:0 auto;border:2px solid var(--ink);border-radius:24px;background:var(--card);padding:32px;box-shadow:6px 6px 0 var(--ink)}
+.notes h3{font-size:clamp(26px,3.2vw,38px);line-height:1.05}
+.notes p{color:var(--muted);margin:10px 0 0}
+.notes p.small{margin-bottom:20px;font-weight:600;color:var(--orange-text)}
+.notes .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.notes input[type=text],.notes input[type=email]{width:100%;font:500 16px var(--body);padding:12px 14px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink)}
+.notes label.c{display:flex;gap:10px;align-items:center;margin:14px 0;font-weight:600;cursor:pointer}
+.notes label.c input{width:20px;height:20px;accent-color:var(--orange)}
+.notes .msg{font-size:14px;color:var(--muted);min-height:1.4em;margin-top:10px}
+.notes .msg.err{color:#b4441a}
+@media (max-width:600px){.notes .row{grid-template-columns:1fr}.notes{padding:24px}}
+
+/* L: footer */
+footer{background:var(--ink);color:var(--paper);padding:48px 0 28px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer img{height:30px;display:block;margin-bottom:12px}
+footer h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lilac);font-weight:500;margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer a{text-decoration:none;font-weight:600}
+footer a:hover{color:var(--lilac)}
+footer .base{border-top:1px solid rgba(238,230,219,.2);margin-top:36px;padding-top:18px;font-size:14px;opacity:.85}
+@media (max-width:700px){footer .cols{grid-template-columns:1fr}}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:999px;font-weight:600;transition:transform .3s;z-index:100}
+.toast.show{transform:translate(-50%,0)}
 </style>
 </head>
 <body>
@@ -213,190 +262,168 @@ footer .social a:hover{color:var(--lilac)}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Aigility Hub home"><img src="../assets/logo.png" alt="Aigility Hub" width="124" height="30"></a>
     <div class="links">
-      <a href="#wall">The wall</a><a href="#beliefs">Beliefs</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#human-first">Human-First</a><a href="#how-we-help">How We Help</a><a href="#about">Speaking</a><a href="#notes">Human Notes</a><a href="#about">About</a>
     </div>
     <div class="spacer"></div>
-    <a class="btn ghost" href="#wall">Drag the wall</a>
-    <a class="btn alt" href="#contact">Say hello</a>
+    <a class="btn alt" href="#contact">Say Hello</a>
   </div>
 </nav>
 
+<!-- A: header -->
 <header class="hero wrap" id="top">
   <div class="eyebrow mono"><span>Aigility Hub</span><span>·</span><span>Humanizing AI</span><span>·</span><span>Canada</span></div>
-  <h1>AI is moving fast.<br>Your organization still moves at <span class="hl">the speed of humans.</span></h1>
+  <h1>It’s time to move at <span class="hl">the speed of humans.</span></h1>
+  <div class="sticker" aria-hidden="true">
+    <svg viewBox="0 0 170 170"><defs><path id="ring" d="M85,85 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0"/></defs>
+      <text font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="700" fill="#3d2518"><textPath href="#ring" textLength="410" lengthAdjust="spacingAndGlyphs">PEOPLE THINK • PEOPLE DECIDE • PEOPLE REMAIN RESPONSIBLE • </textPath></text></svg>
+    <b>Human<br>first</b>
+  </div>
   <div class="hero-row">
-    <p>We help leaders understand what AI means for their organization, decide what makes sense, and take the next useful step.</p>
-    <div class="ctas">
-      <a class="btn alt" href="#wall">What should we do next? →</a>
-      <a class="underline" href="#beliefs">Things we believe to be true →</a>
+    <div>
+      <p class="lead">We help leaders make sense of AI, decide what matters, and take the next useful step.</p>
+      <p class="lead">For the humans leading the change, and the humans living it.</p>
     </div>
+    <a class="btn alt big" href="https://calendar.aigilityhub.ai/widget/bookings/ask-a-human" target="_blank" rel="noopener">Share your question →</a>
   </div>
 </header>
 
+<!-- B: logos -->
+<div class="logos">
+  <div class="wrap">
+    <h2>Helping leaders make sense of AI.</h2>
+    <!-- Placeholder names: swap each span for a monochrome logo image. -->
+    <div class="logo-row" aria-label="Organizations we've worked with"><span>Futurpreneur Canada</span><span>QEII Foundation</span><span>Tourism Nova Scotia</span><span>NB Medical Society</span><span>CBDC</span></div>
+  </div>
+</div>
+
+<!-- C: the wall -->
+<div class="wall-intro wrap" id="how-we-help">
+  <h2>Picture what better <span class="hl">could look like.</span></h2>
+  <p>A little vision board for better work with AI.</p>
+</div>
 <div class="wrap" id="wall">
   <div class="wall-head mono">
-    <span>The wall · 14 pinned · 0 hype</span>
+    <span>Picture Better · 16 pinned · 0 hype</span>
     <span>Drag anything. Nobody’s keeping score.</span>
     <button class="btn ghost" id="tidy" style="font-size:13px;padding:6px 14px">Tidy up</button>
   </div>
   <div class="wall" id="wallEl">
-    <article class="card nametag" data-w="260" data-x="2" data-y="24" data-r="-4">
-      <div class="top"><b>Hello</b><span class="mono">my name is</span></div>
-      <div class="name">Melissa Lloyd</div>
-      <div class="role mono">Founder · AI speaker &amp; facilitator</div>
+    <article class="card statement" data-w="460" data-x="30" data-y="330" data-r="0">
+      <div class="tag mono">The big question</div>
+      <h3>What do you want AI to make better?</h3>
     </article>
 
-    <article class="card photo" data-w="300" data-x="27" data-y="40" data-r="3">
-      <img src="../assets/melissa2.png" alt="Melissa Lloyd pointing to her Human First sweatshirt" width="2756" height="3543">
-      <span class="cap">Human first</span>
+    <article class="card cal" data-w="250" data-x="1" data-y="24" data-r="-3">
+      <div class="tag mono">Calendar · Tuesday</div>
+      <div class="slot"><b>9:00</b><span>Status update</span></div>
+      <div class="slot think"><b>10:00</b><span>Thinking Time</span></div>
+      <div class="slot"><b>11:30</b><span>Check-in</span></div>
     </article>
 
-    <article class="card quote" data-w="330" data-x="58" data-y="20" data-r="-2">
-      <div class="tag mono">Start here · 01</div>
-      <p>“I know AI matters. But honestly, I’m not sure what this means for us.”</p>
-      <a class="go" href="#contact">Start here →</a>
+    <article class="card sticky" data-w="190" data-x="25" data-y="40" data-r="5">
+      <p>Ask why first</p>
     </article>
 
-    <article class="card orange" data-w="260" data-x="2" data-y="330" data-r="2">
-      <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="14" cy="14" r="9"/><path d="M21 21l8 8"/></svg>
-      <div class="tag mono">Service</div>
-      <h3>AI Adoption Gap Diagnostic</h3>
-      <p>Find out what’s really standing between your people and the tools you’ve invested in.</p>
+    <article class="card slip" data-w="280" data-x="44" data-y="24" data-r="-2">
+      <div class="tag mono">Permission slip</div>
+      <p>YOU DON’T HAVE TO KNOW EVERYTHING</p>
+      <div class="sign">Signed: a fellow human</div>
     </article>
 
-    <article class="card quote" data-w="320" data-x="60" data-y="300" data-r="3">
-      <div class="tag mono">Start here · 02</div>
-      <p>“We’ve bought the tools. Our people aren’t really using them.”</p>
-      <a class="go" href="#contact">Let’s find out what is in the way →</a>
+    <article class="card polaroid" data-w="250" data-x="71" data-y="34" data-r="3">
+      <div class="ph"><img src="../assets/melissa2.png" alt="Melissa Lloyd pointing to her Human First sweatshirt" width="2756" height="3543"></div>
+      <p>Melissa · still asking why</p>
     </article>
 
-    <article class="card brown" data-w="280" data-x="30" data-y="440" data-r="-3">
-      <div class="tag mono">Track record</div>
-      <div class="big" style="color:var(--orange)">2,800+</div>
-      <p>leaders and professionals across Canada have trusted us.</p>
+    <article class="card inbox" data-w="230" data-x="1" data-y="300" data-r="3">
+      <div class="tag mono">Inbox</div>
+      <div class="zero">0</div>
+      <div class="pile"><span>37 notifications</span><span>12 “quick questions”</span><span>5 reminders about reminders</span></div>
     </article>
 
-    <article class="card lilac" data-w="250" data-x="4" data-y="610" data-r="-5">
-      <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h22v15H15l-6 5v-5H5z"/><path d="M13.5 12.5a2.5 2.5 0 1 1 3.5 2.3c-.9.4-1 1-1 1.7"/><path d="M16 19.2v.1"/></svg>
-      <div class="tag mono">Service</div>
-      <h3>AI Fluency for Leaders</h3>
-      <p>Understand what AI means for your organization and decide where it fits.</p>
+    <article class="card lined" data-w="250" data-x="72" data-y="410" data-r="-3">
+      <h3>Questions I don’t know yet</h3>
     </article>
 
-    <article class="card quote" data-w="320" data-x="62" data-y="560" data-r="-2">
-      <p>“As a leadership team, we walked away with practical tools and increased confidence to create an environment where our team can test and explore AI with appropriate guardrails.”</p>
-      <cite>Susan Mullin<span>President &amp; CEO, QEII Foundation</span></cite>
+    <article class="card coffee" data-w="220" data-x="2" data-y="560" data-r="-2">
+      <svg viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="#3d2518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 38h46v22a20 20 0 0 1-20 20h-6a20 20 0 0 1-20-20z" fill="#eee6db"/><path d="M66 44h6a9 9 0 0 1 0 18h-6"/><path d="M34 16c-4 5 4 8 0 14M46 12c-4 6 4 10 0 18"/><path d="M14 86h66"/></svg>
+      <p>Human judgment required</p>
     </article>
 
-    <article class="card quote" data-w="300" data-x="31" data-y="720" data-r="2">
-      <div class="tag mono">Start here · 03</div>
-      <p>“Everyone keeps asking for AI training.”</p>
-      <a class="go" href="#contact">Let’s make sure training is the answer →</a>
+    <article class="card nametag" data-w="250" data-x="24" data-y="610" data-r="3">
+      <div class="top"><b>HELLO</b><span class="mono">I’m still</span></div>
+      <div class="say">FIGURING THIS OUT</div>
     </article>
 
-    <article class="card" data-w="260" data-x="3" data-y="880" data-r="4">
-      <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4"/><circle cx="22" cy="11" r="4"/><path d="M3 27c1-5 4-8 8-8s7 3 8 8"/><path d="M18 20c1.2-.7 2.5-1 4-1 4 0 7 3 8 8"/></svg>
-      <div class="tag mono">Service</div>
-      <h3>Practical AI for Teams</h3>
-      <p>Hands-on learning connected to the work your people actually do.</p>
+    <article class="card agenda" data-w="250" data-x="47" data-y="600" data-r="-2">
+      <div class="tag mono">Meeting agenda</div>
+      <ol>
+        <li><b>01</b>Why are we here?</li>
+        <li><b>02</b>What are we trying to make better?</li>
+        <li><b>03</b>Decide one next step</li>
+        <li class="x"><b>04</b>Recap the last meeting</li>
+        <li class="x"><b>05</b>Read the slides aloud</li>
+        <li class="x"><b>06</b>Schedule a meeting about this meeting</li>
+      </ol>
     </article>
 
-    <article class="card orange" data-w="300" data-x="62" data-y="860" data-r="3">
-      <div class="tag mono">Start here · 04</div>
-      <p style="font-size:17px;font-weight:600">“We’re using AI. Now where could it actually change the work?”</p>
-      <a class="go" href="#contact">Let’s UpThink it →</a>
+    <article class="card arrow" data-w="220" data-x="74" data-y="680" data-r="0">
+      <svg viewBox="0 0 150 90" aria-hidden="true"><path d="M8 70c30-40 60 10 80-30s40-20 50-28"/><path d="M122 6l16 6-8 15"/></svg>
+      <p>Maybe not AI?</p>
     </article>
 
-    <article class="card brown" data-w="280" data-x="32" data-y="980" data-r="-2">
-      <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 25L25 7"/><path d="M12 7h13v13"/></svg>
-      <div class="tag mono">Service</div>
-      <h3>UpThink the Work</h3>
-      <p>Find where AI could genuinely make the work better, and where human judgment stays in charge.</p>
+    <article class="card check" data-w="200" data-x="3" data-y="860" data-r="4">
+      <div class="tag mono">Checklist</div>
+      <p><i>✓</i>Useful?</p>
     </article>
 
-    <article class="card quote" data-w="300" data-x="4" data-y="1080" data-r="-3">
-      <p>“By grounding AI in our daily work, values, and guardrails, the AI Readiness Accelerator helped establish a cohesive foundation.”</p>
-      <cite>Lisa LePage<span>COO, New Brunswick Medical Society</span></cite>
+    <article class="card lined" data-w="260" data-x="22" data-y="880" data-r="-3">
+      <h3>Things we could stop doing</h3>
     </article>
 
-    <article class="card lilac" data-w="240" data-x="64" data-y="1110" data-r="5">
-      <div class="tag mono">Track record</div>
-      <div class="big">25+</div>
-      <p>years helping people navigate change.</p>
+    <article class="card nohype" data-w="170" data-x="47" data-y="920" data-r="-5">
+      <p>NO HYPE</p>
+    </article>
+
+    <article class="card sign" data-w="200" data-x="49" data-y="1050" data-r="3">
+      <p>QUESTIONS WELCOME</p>
+    </article>
+
+    <article class="card ask" data-w="300" data-x="70" data-y="880" data-r="2">
+      <h3>Got a question?</h3>
+      <p>Let’s figure it out.</p>
+      <a class="btn alt" href="https://calendar.aigilityhub.ai/widget/bookings/ask-a-human" target="_blank" rel="noopener">Give me a call →</a>
     </article>
   </div>
 </div>
 
+<!-- D: ticker -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Human first</span><span>Moving at the speed of humans</span><span>Start with the work, not the tool</span><span>No hype, just useful thinking</span><span>Judgment stays human</span>
-    <span>Human first</span><span>Moving at the speed of humans</span><span>Start with the work, not the tool</span><span>No hype, just useful thinking</span><span>Judgment stays human</span>
+    <span>SAY HI</span><span>ASK A QUESTION</span><span>TALK TO A HUMAN</span><span>FIGURE OUT WHAT MATTERS</span><span>1-800-HUMAN-AI</span>
+    <span>SAY HI</span><span>ASK A QUESTION</span><span>TALK TO A HUMAN</span><span>FIGURE OUT WHAT MATTERS</span><span>1-800-HUMAN-AI</span>
   </div>
 </div>
 
-<section id="beliefs">
+<!-- E: AI can do more than ever -->
+<section id="human-first">
   <div class="wrap">
-    <div class="mono" style="color:var(--muted)">Things we believe to be true</div>
     <h2>AI can do more <span class="hl">than ever.</span></h2>
-    <p style="font-size:20px;font-weight:500;max-width:620px;margin-bottom:24px">But just because AI can do something doesn’t mean we should hand it over.</p>
-    <div class="beliefs">
-      <div class="belief"><span class="ai">AI can draft the recommendation.</span><h3>Who decides whether it’s right?</h3></div>
-      <div class="belief"><span class="ai">AI can summarize the interviews.</span><h3>Who notices what it missed?</h3></div>
-      <div class="belief"><span class="ai">AI can act on your behalf.</span><h3>Who decides what it’s allowed to do?</h3></div>
-      <div class="belief"><span class="ai">AI can make decisions and trigger the next step.</span><h3>Who remains responsible when it gets something wrong?</h3></div>
+    <p class="sub">Make sure you’re still the one deciding what matters.</p>
+    <div class="better4">
+      <article><div class="n">01</div><h3>Become a better listener.</h3><p>Use AI to help you notice patterns, surface perspectives and prepare better questions, without outsourcing the human part of listening.</p></article>
+      <article><div class="n">02</div><h3>Make better decisions.</h3><p>Use AI to explore possibilities, challenge assumptions and work through complexity, while keeping judgment and accountability with you.</p></article>
+      <article><div class="n">03</div><h3>Give your people more room to think.</h3><p>Take friction out of the work, reduce some of the busywork, and create more space for the work that actually needs people.</p></article>
+      <article><div class="n">04</div><h3>Upthink what’s possible.</h3><p>Don’t just use AI to do today’s work faster. Step back and ask what the work, the experience or the outcome could become.</p></article>
     </div>
-    <p class="closer">The more AI can do, the more important <span>human judgment</span> becomes.</p>
+    <!-- TODO: point to the services page once it exists. -->
+    <a class="btn alt big" href="#how-we-help">Explore how we help →</a>
   </div>
 </section>
 
-<section id="approach">
-  <div class="wrap">
-    <div class="mono" style="color:var(--muted)">Our approach</div>
-    <h2>Start with the work, <span class="hl">not the tool.</span></h2>
-    <div class="compare">
-      <div class="box dont">
-        <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M8 24L24 8"/></svg>
-        <h3>Don’t start here</h3>
-        <p class="q">What can AI do?</p>
-        <ul class="chips"><li>tools</li><li>agents</li><li>automation</li><li>Copilot</li><li>workflows</li><li>prompts</li></ul>
-      </div>
-      <div class="box">
-        <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="6"/><circle cx="16" cy="16" r="1.5"/></svg>
-        <h3>Start here.</h3>
-        <p class="q">What are we trying to make better?</p>
-        <ul class="better"><li>The work?</li><li>The customer experience?</li><li>A decision?</li><li>Someone’s day?</li><li>The business?</li><li class="no">Nothing? Maybe AI shouldn’t be involved.</li></ul>
-      </div>
-    </div>
-    <div class="race" id="raceEl" style="margin-top:48px">
-      <div class="mono" style="color:var(--muted);margin-bottom:10px">The AI race</div>
-      <div class="lane tech"><b>Technology</b><div class="track"><div class="bar" aria-hidden="true">→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</div></div></div>
-      <div class="lane hum"><b>Humans</b><div class="track"><div class="bar" aria-hidden="true">→→→→→→→→</div></div></div>
-      <div class="race-cap">
-        <p>The goal isn’t to make people move at the speed of AI.</p>
-        <h3>It’s to make AI move at the speed of humans.</h3>
-      </div>
-      <button class="replay" id="replay" type="button">Replay ↺</button>
-    </div>
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap about">
-    <div class="about-photo"><img src="../assets/melissa2.png" alt="Melissa Lloyd smiling and pointing to her Human First sweatshirt" width="2756" height="3543" loading="lazy"><em>Founder</em></div>
-    <div>
-      <div class="mono" style="color:var(--muted)">About</div>
-      <h2>Hi. I’m <span class="hl">Melissa Lloyd.</span></h2>
-      <p class="big">I’m not here to convince you to use more AI.</p>
-      <p>I’m here to help you figure out where it makes sense, where it doesn’t, and how to bring your people with you.</p>
-      <div class="facts"><span><b>25+</b> years helping people navigate change</span><span><b>National</b> AI speaker &amp; facilitator</span><span><b>2,800+</b> leaders across Canada</span></div>
-      <p class="turn">Because AI isn’t really the hard part.</p>
-    </div>
-  </div>
-</section>
-
+<!-- F: blame the bot -->
 <section id="last" class="last">
   <div class="wrap">
-    <div class="mono" style="color:var(--muted)">One last thing</div>
     <h2>AI driving you <span class="hl">a little nuts?</span></h2>
     <div class="arena" id="arena">
       <div class="arena-title"><b>Blame the bot.</b><span>Drag the little AI bot back, then let go. It can take it.</span></div>
@@ -420,49 +447,129 @@ footer .social a:hover{color:var(--lilac)}
         <h3>Feel better? Good.</h3>
         <p>Now let’s figure out where AI can actually make work better.</p>
         <div class="row">
-          <a class="btn alt" href="#contact">UpThink the work →</a>
+          <a class="btn alt" href="https://calendar.aigilityhub.ai/widget/bookings/ask-a-human" target="_blank" rel="noopener">Ask a human →</a>
           <button class="btn ghost" type="button" id="botAgain">Launch again</button>
         </div>
       </div>
     </div>
+    <p class="after-arena"><a class="btn alt big" href="https://calendar.aigilityhub.ai/widget/bookings/ask-a-human" target="_blank" rel="noopener">Ask a human →</a></p>
   </div>
 </section>
 
+<!-- G: start with the human -->
+<section id="approach">
+  <div class="wrap human">
+    <div>
+      <h2>Start with the human. <span class="hl">Not the tool.</span></h2>
+      <p class="sub">Before asking what AI can do, ask:</p>
+    </div>
+    <div class="box">
+      <svg class="ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><circle cx="16" cy="16" r="6"/><circle cx="16" cy="16" r="1.5"/></svg>
+      <h3>What are you trying to make better?</h3>
+      <ul class="better"><li>The work?</li><li>The customer experience?</li><li>A decision?</li><li>Someone’s day?</li><li>The business?</li></ul>
+      <p class="then">Start there. Then explore what AI could make possible.</p>
+      <!-- TODO: point to the human-first page once it exists. -->
+      <a class="btn alt" href="#human-first">See our human-first approach →</a>
+    </div>
+  </div>
+</section>
+
+<!-- H: AI value gap -->
+<section id="value-gap">
+  <div class="wrap">
+    <h2>The AI <span class="hl">Value Gap</span></h2>
+    <div class="race" id="raceEl">
+      <div class="lane tech"><b>AI capability</b><div class="track"><div class="bar" aria-hidden="true">→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→</div></div></div>
+      <div class="lane hum"><b>Human capability</b><div class="track"><div class="bar" aria-hidden="true">→→→→→→→→</div></div></div>
+      <div class="race-cap">
+        <h3>AI is moving fast. Value comes when people can move with it.</h3>
+        <p>Build fluency. Strengthen judgment. UpThink the work.</p>
+      </div>
+      <button class="replay" id="replay" type="button">Replay ↺</button>
+    </div>
+  </div>
+</section>
+
+<!-- I: about -->
+<section id="about">
+  <div class="wrap about">
+    <div class="nametag" role="img" aria-label="Name tag: Hello, my name is Melissa Lloyd">
+      <div class="top"><b>HELLO</b><span class="mono">my name is</span></div>
+      <div class="name">Melissa Lloyd</div>
+      <div class="role mono">Founder · Aigility Hub</div>
+    </div>
+    <div>
+      <h2>Hello. I’m <span class="hl">Melissa Lloyd.</span></h2>
+      <p class="big">I help leaders feel a little less overwhelmed by AI and a lot more ready for what’s next.</p>
+      <div class="facts"><span>🎤 National speaker + facilitator</span><span>💬 2,800+ humans UpThinking</span></div>
+      <!-- TODO: point to the about page once it exists. -->
+      <a class="btn alt" href="https://aigilityhub.ai/" target="_blank" rel="noopener">Meet Melissa →</a>
+      <p class="turn">Because AI isn’t really the hard part.</p>
+    </div>
+  </div>
+</section>
+
+<!-- J: contact -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <div class="mono" style="color:var(--muted)">Contact · let’s talk</div>
     <h2>Say <span class="hl">hello.</span></h2>
-    <p class="lead">Deciding what to do with it is. Not sure where to start? That’s okay. Let’s figure out your next useful step.</p>
+    <p class="lead">Bring the AI question you’re still trying to figure out.</p>
+    <p class="lead">No perfect question required.</p>
     <div class="email-row">
       <a class="email" href="mailto:hello@aigilityhub.com">hello@aigilityhub.com</a>
       <button class="btn ghost" id="copy" type="button">Copy email</button>
     </div>
-    <a class="btn alt" href="mailto:hello@aigilityhub.com?subject=Let%E2%80%99s%20start%20a%20conversation">Start a conversation →</a>
+    <a class="btn alt big" href="https://calendar.aigilityhub.ai/widget/bookings/ask-a-human" target="_blank" rel="noopener">Talk to Melissa →</a>
+  </div>
+</section>
 
+<!-- K: human notes -->
+<section id="notes">
+  <div class="wrap">
     <!-- Not yet connected to a mailing list: on submit this opens an email to hello@aigilityhub.com. -->
-    <form class="notes" id="notes" novalidate>
-      <div class="mono" style="color:var(--orange-text)">Field Notes</div>
-      <h3>AI moves fast. You don’t have to chase it.</h3>
-      <p>Short, honest notes for busy leaders trying to make sense of AI, ask better questions, and decide what actually matters.</p>
+    <form class="notes" id="notesForm" novalidate>
+      <div class="mono" style="color:var(--orange-text)">Human Notes</div>
+      <h3 style="margin-top:8px">AI moves fast. You don’t have to chase it.</h3>
+      <p>Short, useful thoughts on AI, leadership, people and work, for humans trying to figure out what actually matters.</p>
+      <p class="small">A little UpThinking for your inbox.</p>
       <div class="row">
-        <input type="text" name="name" placeholder="Name" aria-label="Name" autocomplete="name" required>
-        <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+        <input type="text" id="hnName" name="name" placeholder="Name" aria-label="Name" autocomplete="name" required>
+        <input type="email" id="hnEmail" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
       </div>
-      <label class="c"><input type="checkbox" name="consent" required> Yes, send me Field Notes. No hype. Just useful thinking.</label>
-      <button class="btn alt" type="submit">Send me Field Notes →</button>
+      <label class="c"><input type="checkbox" id="hnConsent" name="consent" required> Yes, send me Human Notes.</label>
+      <button class="btn alt" type="submit">Send me Human Notes →</button>
       <p class="msg" id="notesMsg" aria-live="polite"></p>
     </form>
   </div>
 </section>
 
+<!-- L: footer -->
 <footer>
   <div class="wrap">
-    <img src="../assets/logo.png" alt="Aigility Hub" width="107" height="26" loading="lazy">
-    <span class="mono">Moving at the speed of humans · © <span id="yr"></span></span>
-    <div class="social">
-      <a href="https://www.linkedin.com/company/aigility-hub" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.youtube.com/@AigilityHub" target="_blank" rel="noopener">YouTube</a>
+    <div class="cols">
+      <div>
+        <img src="../assets/logo.png" alt="Aigility Hub" width="124" height="30" loading="lazy">
+        <p>Humanizing AI.</p>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@aigilityhub.com">Say Hello</a></li>
+          <li><a href="#notes">Human Notes</a></li>
+          <li><a href="https://www.linkedin.com/company/aigility-hub" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="https://aigilityhub.ai/ai-policy/" target="_blank" rel="noopener">AI Policy</a></li>
+          <li><a href="https://aigilityhub.ai/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="https://aigilityhub.ai/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a></li>
+          <li><a href="https://aigilityhub.ai/cookie-policy/" target="_blank" rel="noopener">Cookie Policy</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="base">Moving at the speed of humans · © <span id="yr"></span> Aigility Hub</div>
   </div>
 </footer>
 
@@ -498,7 +605,7 @@ footer .social a:hover{color:var(--lilac)}
   }
   function tidy() {
     if (!desktop()) return;
-    var W = wall.clientWidth, gap = 20, colW = 280;
+    var W = wall.clientWidth, gap = 20, colW = 270;
     var cols = Math.max(1, Math.floor((W - gap) / (colW + gap)));
     var offset = (W - cols * (colW + gap) + gap) / 2;
     var heights = []; for (var k = 0; k < cols; k++) heights.push(gap);
@@ -531,7 +638,7 @@ footer .social a:hover{color:var(--lilac)}
   scatter();
   var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { wall.style.height = ''; scatter(); }, 150); });
 
-  // race
+  // AI value gap race
   var race = document.getElementById('raceEl');
   document.getElementById('replay').onclick = function () { race.classList.remove('in'); void race.offsetWidth; race.classList.add('in'); };
   if ('IntersectionObserver' in window) {
@@ -539,7 +646,7 @@ footer .social a:hover{color:var(--lilac)}
     io.observe(race);
   } else { race.classList.add('in'); }
 
-  // one last thing: blame the bot (slingshot)
+  // blame the bot (slingshot)
   (function () {
     var arena = document.getElementById('arena'), bot = document.getElementById('bot'), anchorEl = document.getElementById('anchor');
     var bandA = document.getElementById('bandA'), bandB = document.getElementById('bandB'), hint = document.getElementById('hint');
@@ -635,22 +742,22 @@ footer .social a:hover{color:var(--lilac)}
       launch(900 + Math.random() * 600, -(700 + Math.random() * 500));
     };
     document.getElementById('botAgain').onclick = reset;
-    var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(measure, 120); });
+    var rt2; addEventListener('resize', function () { clearTimeout(rt2); rt2 = setTimeout(measure, 120); });
     measure();
   })();
 
-  // Field Notes (no list connected yet: opens an email)
-  var form = document.getElementById('notes'), msg = document.getElementById('notesMsg');
+  // Human Notes (no list connected yet: opens an email)
+  var form = document.getElementById('notesForm'), msg = document.getElementById('notesMsg');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var name = form.name.value.trim(), email = form.email.value.trim();
     msg.className = 'msg err';
     if (!name) { msg.textContent = 'Please add your name.'; form.name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please add a valid email address.'; form.email.focus(); return; }
-    if (!form.consent.checked) { msg.textContent = 'Please tick the box so we know you want Field Notes.'; return; }
+    if (!form.consent.checked) { msg.textContent = 'Please tick the box so we know you want Human Notes.'; return; }
     msg.className = 'msg';
-    msg.textContent = 'Opening your email app to send your sign-up…';
-    location.href = 'mailto:hello@aigilityhub.com?subject=' + encodeURIComponent('Field Notes sign-up') + '&body=' + encodeURIComponent('Please add me to Field Notes.\n\nName: ' + name + '\nEmail: ' + email);
+    msg.textContent = 'Thanks! If your email app doesn’t open, email hello@aigilityhub.com to join Human Notes.';
+    location.href = 'mailto:hello@aigilityhub.com?subject=' + encodeURIComponent('Human Notes sign-up') + '&body=' + encodeURIComponent('Please add me to Human Notes.\n\nName: ' + name + '\nEmail: ' + email);
   });
 })();
 </script>
