@@ -173,6 +173,36 @@ footer .social a{font-weight:600;text-decoration:none}
 footer .social a:hover{color:var(--lilac)}
 .toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--ink);color:var(--paper);padding:12px 20px;border-radius:999px;font-weight:600;transition:transform .3s;z-index:100}
 .toast.show{transform:translate(-50%,0)}
+
+/* one last thing: blame the bot */
+.last{text-align:center}
+.last h2{margin-bottom:10px}
+.arena{position:relative;height:540px;margin-top:36px;border:2px solid var(--ink);border-radius:32px;overflow:hidden;box-shadow:8px 8px 0 var(--ink);background:radial-gradient(circle at 18% 22%,var(--lilac) 0 90px,transparent 91px),radial-gradient(circle at 86% 30%,#ffd166 0 70px,transparent 71px),radial-gradient(circle at 70% 88%,var(--paper) 0 120px,transparent 121px),radial-gradient(circle at 1px 1px,rgba(61,37,24,.28) 1px,transparent 0) 0 0/22px 22px,var(--orange);touch-action:pan-y;user-select:none}
+.arena-title{position:absolute;left:0;right:0;top:26px;text-align:center;pointer-events:none;color:#fff;padding:0 16px}
+.arena-title b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,7vw,88px);letter-spacing:-.03em;line-height:.95;text-shadow:4px 4px 0 var(--ink)}
+.arena-title span{display:inline-block;margin-top:12px;font-weight:600;font-size:clamp(15px,1.8vw,19px);background:var(--ink);color:var(--paper);border-radius:999px;padding:6px 14px}
+.band{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.band line{stroke:var(--ink);stroke-width:5;stroke-linecap:round}
+.anchor{position:absolute;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 6px rgba(61,37,24,.25)}
+.bot{position:absolute;left:0;top:0;width:96px;height:96px;margin:-48px 0 0 -48px;cursor:grab;touch-action:none;will-change:transform;z-index:3}
+.bot:active{cursor:grabbing}
+.bot svg{width:100%;height:100%;display:block;filter:drop-shadow(4px 5px 0 rgba(61,37,24,.85))}
+.bot .dizzy{display:none}
+.bot.flying .calm{display:none}.bot.flying .dizzy{display:inline}
+.hint{position:absolute;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:6px 12px;pointer-events:none;white-space:nowrap;transition:opacity .3s}
+.hint.gone{opacity:0}
+.bonk{position:absolute;font-family:var(--display);font-size:22px;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:12px;padding:2px 10px;pointer-events:none;animation:bonk .7s ease-out forwards;z-index:4}
+@keyframes bonk{from{opacity:1;transform:translate(-50%,-50%) scale(.6) rotate(-8deg)}to{opacity:0;transform:translate(-50%,-140%) scale(1.15) rotate(6deg)}}
+.stats{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:12px;color:var(--ink);background:rgba(255,255,255,.7);border-radius:999px;padding:5px 12px}
+.arena-tools{position:absolute;right:14px;bottom:12px;display:flex;gap:8px}
+.arena-tools .btn{font-size:13px;padding:7px 14px;background:var(--paper);color:var(--ink)}
+.landed{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);width:min(460px,calc(100% - 32px));background:var(--paper);border:2px solid var(--ink);border-radius:24px;box-shadow:8px 8px 0 var(--ink);padding:26px;text-align:center;opacity:0;pointer-events:none;transition:opacity .35s, transform .35s;z-index:5}
+.landed.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.landed h3{font-size:clamp(28px,4vw,40px);line-height:1}
+.landed p{margin:12px 0 18px;font-size:17px}
+.landed .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+@media (max-width:860px){.stats{display:none}.arena{height:480px}.bot{width:80px;height:80px;margin:-40px 0 0 -40px}.arena-title{top:18px}}
+@media (prefers-reduced-motion:reduce){.bonk{animation-duration:.01s}}
 </style>
 </head>
 <body>
@@ -361,6 +391,40 @@ footer .social a:hover{color:var(--lilac)}
   </div>
 </section>
 
+<section id="last" class="last">
+  <div class="wrap">
+    <div class="mono" style="color:var(--muted)">One last thing</div>
+    <h2>AI driving you <span class="hl">a little nuts?</span></h2>
+    <div class="arena" id="arena">
+      <div class="arena-title"><b>Blame the bot.</b><span>Drag the little AI bot back, then let go. It can take it.</span></div>
+      <svg class="band" id="band" aria-hidden="true"><line id="bandA"/><line id="bandB"/></svg>
+      <div class="anchor" id="anchor" aria-hidden="true"></div>
+      <div class="hint" id="hint" aria-hidden="true">← pull back &amp; let go</div>
+      <div class="bot" id="bot" role="img" aria-label="A small AI bot you can drag and launch">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 4l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#f26725" stroke="#3d2518" stroke-width="2"/>
+          <line x1="50" y1="24" x2="50" y2="32" stroke="#3d2518" stroke-width="4" stroke-linecap="round"/>
+          <rect x="14" y="30" width="72" height="60" rx="24" fill="#e2d2f8" stroke="#3d2518" stroke-width="4"/>
+          <rect x="24" y="42" width="52" height="30" rx="14" fill="#3d2518"/>
+          <g class="calm"><circle cx="40" cy="56" r="5" fill="#fff"/><circle cx="60" cy="56" r="5" fill="#fff"/><path d="M42 65q8 6 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+          <g class="dizzy" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M35 51l9 9M44 51l-9 9M56 51l9 9M65 51l-9 9"/><circle cx="50" cy="66" r="3.5" fill="#fff" stroke="none"/></g>
+          <circle cx="22" cy="78" r="5" fill="#f26725" opacity=".8"/><circle cx="78" cy="78" r="5" fill="#f26725" opacity=".8"/>
+        </svg>
+      </div>
+      <div class="stats mono" id="botStats" aria-live="polite">Launches: 0 · Bonks: 0</div>
+      <div class="arena-tools"><button class="btn" type="button" id="botAuto">Launch it for me</button></div>
+      <div class="landed" id="landed" role="status">
+        <h3>Feel better? Good.</h3>
+        <p>Now let’s figure out where AI can actually make work better.</p>
+        <div class="row">
+          <a class="btn alt" href="#contact">UpThink the work →</a>
+          <button class="btn ghost" type="button" id="botAgain">Launch again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="mono" style="color:var(--muted)">Contact · let’s talk</div>
@@ -471,6 +535,106 @@ footer .social a:hover{color:var(--lilac)}
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { race.classList.add('in'); io.disconnect(); } }); }, {threshold: .3});
     io.observe(race);
   } else { race.classList.add('in'); }
+
+  // one last thing: blame the bot (slingshot)
+  (function () {
+    var arena = document.getElementById('arena'), bot = document.getElementById('bot'), anchorEl = document.getElementById('anchor');
+    var bandA = document.getElementById('bandA'), bandB = document.getElementById('bandB'), hint = document.getElementById('hint');
+    var landed = document.getElementById('landed'), statsEl = document.getElementById('botStats');
+    var W = 0, H = 0, R = 48, anchor = {x: 0, y: 0}, pos = {x: 0, y: 0}, vel = {x: 0, y: 0}, angle = 0;
+    var dragging = false, flying = false, launches = 0, bonks = 0, last = 0, still = 0, rested = true;
+    var MAX_PULL = 150, GRAVITY = 1700;
+    function measure() {
+      W = arena.clientWidth; H = arena.clientHeight; R = bot.offsetWidth / 2;
+      anchor.x = Math.max(R + 40, W * 0.2); anchor.y = H * 0.66;
+      anchorEl.style.left = anchor.x + 'px'; anchorEl.style.top = anchor.y + 'px';
+      hint.style.left = (anchor.x + R + 18) + 'px'; hint.style.top = (anchor.y - 14) + 'px';
+      if (rested) { pos.x = anchor.x; pos.y = anchor.y; }
+      draw();
+    }
+    function draw() {
+      bot.style.transform = 'translate(' + pos.x + 'px,' + pos.y + 'px) rotate(' + angle + 'deg)';
+      var show = dragging || rested;
+      [bandA, bandB].forEach(function (l, i) {
+        l.setAttribute('x1', anchor.x + (i ? 10 : -10)); l.setAttribute('y1', anchor.y);
+        l.setAttribute('x2', show ? pos.x : anchor.x); l.setAttribute('y2', show ? pos.y : anchor.y);
+      });
+    }
+    function stats() { statsEl.textContent = 'Launches: ' + launches + ' · Bonks: ' + bonks; }
+    function bonk(x, y) {
+      bonks++; stats();
+      if (bonks % 2) return;
+      var words = ['Bonk!', 'Oof', 'Beep!', 'Boing', 'Ow'];
+      var b = document.createElement('span'); b.className = 'bonk'; b.textContent = words[bonks % words.length];
+      b.style.left = x + 'px'; b.style.top = y + 'px'; arena.appendChild(b);
+      setTimeout(function () { b.remove(); }, 750);
+    }
+    function launch(vx, vy) {
+      vel.x = vx; vel.y = vy; flying = true; rested = false; still = 0;
+      launches++; stats(); hint.classList.add('gone'); landed.classList.remove('show');
+      bot.classList.add('flying'); last = 0; requestAnimationFrame(step);
+    }
+    function step(t) {
+      if (!flying) return;
+      var dt = last ? Math.min((t - last) / 1000, 0.033) : 0.016; last = t;
+      vel.y += GRAVITY * dt;
+      pos.x += vel.x * dt; pos.y += vel.y * dt;
+      angle += vel.x * dt * 1.4;
+      if (pos.x < R) { pos.x = R; if (Math.abs(vel.x) > 120) bonk(pos.x, pos.y); vel.x = -vel.x * 0.78; }
+      if (pos.x > W - R) { pos.x = W - R; if (Math.abs(vel.x) > 120) bonk(pos.x, pos.y); vel.x = -vel.x * 0.78; }
+      if (pos.y < R) { pos.y = R; if (Math.abs(vel.y) > 120) bonk(pos.x, pos.y); vel.y = -vel.y * 0.7; }
+      if (pos.y > H - R) {
+        pos.y = H - R;
+        if (Math.abs(vel.y) > 160) bonk(pos.x, pos.y - R);
+        vel.y = -vel.y * 0.62; vel.x *= 0.86;
+        if (Math.abs(vel.y) < 90) vel.y = 0;
+      }
+      var onFloor = pos.y >= H - R - 0.5;
+      if (onFloor && Math.abs(vel.y) < 1 && Math.abs(vel.x) < 25) { still += dt; vel.x *= 0.8; } else { still = 0; }
+      draw();
+      if (still > 0.25) {
+        flying = false; bot.classList.remove('flying'); angle = 0; draw();
+        setTimeout(function () { landed.classList.add('show'); }, 250);
+        return;
+      }
+      requestAnimationFrame(step);
+    }
+    function reset() {
+      flying = false; rested = true; angle = 0; vel.x = vel.y = 0;
+      bot.classList.remove('flying'); landed.classList.remove('show');
+      pos.x = anchor.x; pos.y = anchor.y; draw();
+    }
+    function local(e) { var r = arena.getBoundingClientRect(); return {x: e.clientX - r.left, y: e.clientY - r.top}; }
+    bot.addEventListener('pointerdown', function (e) {
+      if (flying) return;
+      if (!rested) reset();
+      dragging = true; e.preventDefault();
+      if (bot.setPointerCapture) bot.setPointerCapture(e.pointerId);
+    });
+    bot.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var p = local(e), dx = p.x - anchor.x, dy = p.y - anchor.y, d = Math.sqrt(dx * dx + dy * dy);
+      if (d > MAX_PULL) { dx = dx / d * MAX_PULL; dy = dy / d * MAX_PULL; }
+      pos.x = anchor.x + dx; pos.y = anchor.y + dy; angle = dx * 0.12; draw();
+    });
+    function release() {
+      if (!dragging) return;
+      dragging = false;
+      var dx = anchor.x - pos.x, dy = anchor.y - pos.y;
+      if (Math.sqrt(dx * dx + dy * dy) < 14) { reset(); return; }
+      launch(dx * 11, dy * 11);
+    }
+    bot.addEventListener('pointerup', release);
+    bot.addEventListener('pointercancel', release);
+    document.getElementById('botAuto').onclick = function () {
+      if (flying) return;
+      reset();
+      launch(900 + Math.random() * 600, -(700 + Math.random() * 500));
+    };
+    document.getElementById('botAgain').onclick = reset;
+    var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(measure, 120); });
+    measure();
+  })();
 
   // Field Notes (no list connected yet: opens an email)
   var form = document.getElementById('notes'), msg = document.getElementById('notesMsg');
