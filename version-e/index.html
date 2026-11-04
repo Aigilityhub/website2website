@@ -68,7 +68,7 @@ nav.top .btn:hover{box-shadow:4px 4px 0 var(--orange)}
 .wall-intro h2{font-size:clamp(36px,5.4vw,72px);line-height:.98;margin:0}
 .wall-intro p{font-size:clamp(18px,2vw,22px);font-weight:500;margin-top:16px}
 .wall-head{display:flex;justify-content:space-between;align-items:center;padding:24px 0 14px;gap:12px;flex-wrap:wrap}
-.wall{position:relative;height:1180px;margin-bottom:24px;border:2px solid var(--ink);border-radius:28px;background:radial-gradient(circle at 1px 1px,rgba(61,37,24,.25) 1px,transparent 0) 0 0/24px 24px;overflow:hidden;touch-action:pan-y}
+.wall{position:relative;height:1240px;margin-bottom:24px;border:2px solid var(--ink);border-radius:28px;background:radial-gradient(circle at 1px 1px,rgba(61,37,24,.25) 1px,transparent 0) 0 0/24px 24px;overflow:hidden;touch-action:pan-y}
 .card{position:absolute;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:5px 5px 0 var(--ink);cursor:grab;user-select:none;transition:box-shadow .15s, transform .35s cubic-bezier(.2,.8,.2,1), left .5s cubic-bezier(.2,.8,.2,1), top .5s cubic-bezier(.2,.8,.2,1)}
 .card.dragging{cursor:grabbing;box-shadow:12px 12px 0 var(--ink);transition:box-shadow .15s;z-index:999}
 .card .tag{color:var(--muted);margin-bottom:10px}
@@ -121,6 +121,9 @@ nav.top .btn:hover{box-shadow:4px 4px 0 var(--orange)}
 .card.ask{background:var(--lilac)}
 .card.ask h3{font-size:28px;line-height:1}
 .card.ask p{font-weight:600;margin:6px 0 16px;font-size:17px}
+.card.def h3{font-size:30px;line-height:1}
+.card.def h3 i{font-family:var(--body);font-style:italic;font-weight:500;font-size:16px;color:var(--muted);letter-spacing:0;margin-left:6px}
+.card.def p{margin-top:12px;font-size:16px;font-weight:500;line-height:1.4}
 @media (max-width:860px){
   .wall{height:auto;display:flex;flex-direction:column;gap:16px;padding:16px;background-size:20px 20px}
   .card{position:relative;left:auto!important;top:auto!important;width:auto!important;transform:none!important;cursor:default}
@@ -303,7 +306,7 @@ footer .base{border-top:1px solid rgba(238,230,219,.2);margin-top:36px;padding-t
 </div>
 <div class="wrap" id="wall">
   <div class="wall-head mono">
-    <span>Picture Better · 16 pinned · 0 hype</span>
+    <span>Picture Better · 17 pinned · 0 hype</span>
     <span>Drag anything. Nobody’s keeping score.</span>
     <button class="btn ghost" id="tidy" style="font-size:13px;padding:6px 14px">Tidy up</button>
   </div>
@@ -387,6 +390,12 @@ footer .base{border-top:1px solid rgba(238,230,219,.2);margin-top:36px;padding-t
 
     <article class="card sign" data-w="200" data-x="49" data-y="1050" data-r="3">
       <p>QUESTIONS WELCOME</p>
+    </article>
+
+    <article class="card def" data-w="250" data-x="23" data-y="1020" data-r="-2">
+      <div class="tag mono">Definition</div>
+      <h3>UpThink <i>(verb)</i></h3>
+      <p>To question how the work works before asking what AI should do.</p>
     </article>
 
     <article class="card ask" data-w="300" data-x="70" data-y="880" data-r="2">
