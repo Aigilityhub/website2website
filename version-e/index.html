@@ -74,7 +74,7 @@ nav.top .btn:hover{box-shadow:4px 4px 0 var(--orange)}
 .wall-intro p{font-size:clamp(18px,2vw,22px);font-weight:500;margin-top:16px}
 .wall-head{display:flex;justify-content:space-between;align-items:center;padding:24px 0 14px;gap:12px;flex-wrap:wrap}
 .wall{position:relative;height:1240px;margin-bottom:24px;border:2px solid var(--ink);border-radius:28px;background:radial-gradient(circle at 1px 1px,rgba(61,37,24,.25) 1px,transparent 0) 0 0/24px 24px;overflow:hidden;touch-action:pan-y}
-.card{position:absolute;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:5px 5px 0 var(--ink);transition:box-shadow .15s, transform .35s cubic-bezier(.2,.8,.2,1), left .5s cubic-bezier(.2,.8,.2,1), top .5s cubic-bezier(.2,.8,.2,1)}
+.card{position:absolute;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:5px 5px 0 var(--ink);cursor:grab;user-select:none;transition:box-shadow .15s, transform .35s cubic-bezier(.2,.8,.2,1), left .5s cubic-bezier(.2,.8,.2,1), top .5s cubic-bezier(.2,.8,.2,1)}
 .card.dragging{cursor:grabbing;box-shadow:12px 12px 0 var(--ink);transition:box-shadow .15s;z-index:999}
 .card .tag{color:var(--muted);margin-bottom:10px}
 .card h3{font-size:24px;line-height:1.05}
@@ -346,6 +346,8 @@ footer .base{border-top:1px solid rgba(238,230,219,.2);margin-top:36px;padding-t
 <div class="wrap" id="wall">
   <div class="wall-head mono">
     <span>Picture Better · 17 pinned · 0 hype</span>
+    <span>Drag anything. Nobody’s keeping score.</span>
+    <button class="btn ghost" id="tidy" style="font-size:13px;padding:6px 14px">Tidy up</button>
   </div>
   <div class="wall" id="wallEl">
     <article class="card statement" data-w="460" data-x="30" data-y="330" data-r="0">
@@ -683,6 +685,38 @@ footer .base{border-top:1px solid rgba(238,230,219,.2);margin-top:36px;padding-t
       c.style.transform = 'rotate(' + c.dataset.r + 'deg)';
     });
   }
+  function tidy() {
+    if (!desktop()) return;
+    var W = wall.clientWidth, gap = 20, colW = 270;
+    var cols = Math.max(1, Math.floor((W - gap) / (colW + gap)));
+    var offset = (W - cols * (colW + gap) + gap) / 2;
+    var heights = []; for (var k = 0; k < cols; k++) heights.push(gap);
+    cards.forEach(function (c) {
+      c.style.width = colW + 'px';
+      var i = heights.indexOf(Math.min.apply(null, heights));
+      c.style.left = offset + i * (colW + gap) + 'px';
+      c.style.top = heights[i] + 'px';
+      c.style.transform = 'rotate(0deg)';
+      heights[i] += c.offsetHeight + gap;
+    });
+    wall.style.height = Math.max.apply(null, heights) + 'px';
+  }
+  document.getElementById('tidy').onclick = tidy;
+  cards.forEach(function (c) {
+    c.addEventListener('pointerdown', function (e) {
+      if (!desktop() || e.button !== 0 || e.target.closest('a')) return;
+      e.preventDefault();
+      var sx = e.clientX, sy = e.clientY, ox = c.offsetLeft, oy = c.offsetTop;
+      c.classList.add('dragging'); c.style.zIndex = ++z;
+      if (c.setPointerCapture) c.setPointerCapture(e.pointerId);
+      function move(ev) {
+        c.style.left = Math.min(wall.clientWidth - c.offsetWidth, Math.max(0, ox + ev.clientX - sx)) + 'px';
+        c.style.top = Math.min(wall.clientHeight - c.offsetHeight, Math.max(0, oy + ev.clientY - sy)) + 'px';
+      }
+      function up() { c.classList.remove('dragging'); c.style.zIndex = z; c.removeEventListener('pointermove', move); c.removeEventListener('pointerup', up); }
+      c.addEventListener('pointermove', move); c.addEventListener('pointerup', up);
+    });
+  });
   scatter();
   var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { wall.style.height = ''; scatter(); }, 150); });
 
