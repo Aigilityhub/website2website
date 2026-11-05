@@ -238,6 +238,18 @@ h2{font-size:clamp(38px,6vw,84px);line-height:.95;margin:14px 0 20px}
 .statement{padding-block:clamp(140px,18vw,240px)}
 .statement h2{font-size:clamp(44px,7.4vw,116px);line-height:.95;letter-spacing:-.045em;max-width:15ch;margin:0;text-wrap:balance}
 .statement p{max-width:44ch;margin-top:clamp(24px,3vw,40px);font-size:clamp(17px,1.5vw,20px);color:var(--muted);line-height:1.55}
+.manifesto{padding-block:clamp(110px,14vw,200px)}
+.manifesto .kicker{color:var(--muted);margin-bottom:28px}
+.mrows{list-style:none;padding:0;margin:0;border-top:2px solid var(--ink)}
+.mrows li{display:grid;grid-template-columns:clamp(52px,6vw,88px) 1fr auto;gap:clamp(18px,3vw,40px);align-items:center;padding-block:clamp(18px,2.4vw,30px);border-bottom:2px solid var(--ink)}
+.mrows .doodle{width:100%;height:auto;aspect-ratio:1}
+.mrows h3{font-size:clamp(32px,4.9vw,80px);line-height:.95;letter-spacing:-.045em;margin:0}
+.mrows .num{color:var(--muted)}
+.doodle .so{stroke:var(--orange);stroke-width:3.4}
+.manifesto .after{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:clamp(28px,3.4vw,44px)}
+.manifesto .after p{max-width:40ch;font-size:clamp(18px,1.7vw,22px);font-weight:500;line-height:1.45;margin:0}
+.manifesto .after p + p{color:var(--muted);font-weight:400}
+@media (max-width:600px){.mrows li{grid-template-columns:44px 1fr}.mrows .num{display:none}}
 .turnband{background:var(--ink);color:var(--paper);padding:clamp(80px,12vw,168px) 0}
 .turnband h2{font-size:clamp(44px,7vw,116px);line-height:.92;letter-spacing:-.045em;margin:0;text-wrap:balance}
 .turnband .then{font-family:var(--display);font-size:clamp(28px,4.6vw,68px);line-height:1.05;letter-spacing:-.03em;margin-top:clamp(28px,4vw,52px);text-wrap:balance}
@@ -439,11 +451,18 @@ footer .base{border-top:1px solid rgba(238,230,219,.2);margin-top:36px;padding-t
   </div>
 </div>
 
-<!-- D2: statement -->
-<section class="statement">
+<!-- D2: manifesto -->
+<section class="manifesto">
   <div class="wrap">
-    <h2>People think. People decide. People remain responsible.</h2>
-    <p>That’s what human-first means. AI can help with the work. The judgment stays with people.</p>
+    <div class="kicker mono">What human-first means</div>
+    <ol class="mrows">
+      <li><svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path class="fo" d="M24 7c-7.3 0-12.3 5.4-12.1 11.9.1 4.3 2.3 7.2 4.8 9.6 1.5 1.5 2.3 3.2 2.4 5.2h10c.1-2 .9-3.7 2.4-5.2 2.5-2.4 4.8-5.3 4.9-9.6C36.5 12.4 31.3 7 24 7z"/><path d="M19.6 38.2c3-.2 6-.2 9 0M20.6 42.4c2.3-.2 4.6-.2 6.9 0"/><path d="M9 9.2L6.4 6.8M39 9.2l2.6-2.4M5.2 20.2H2.4M42.8 20.2h2.8M24 3.6V1.4"/></svg><h3>People think.</h3><span class="num mono">01</span></li>
+      <li><svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path class="fw" d="M8.5 9.5c10.2-.6 20.4-.6 30.6.2.6 9.8.6 19.6-.1 29.4-10.2.5-20.4.5-30.6-.1-.5-9.8-.5-19.6.1-29.5z"/><path class="so" d="M14.6 24.6c2.4 2.2 4.6 4.6 6.8 7.2 4.2-5.8 8.8-11.2 14-16.2"/></svg><h3>People decide.</h3><span class="num mono">02</span></li>
+      <li><svg class="doodle" viewBox="0 0 48 48" aria-hidden="true"><path class="so" d="M3.5 40c2.6-4.2 5-6.2 6.4-3.6 1.3 2.6 2.4 4.6 5.4-.4 2.4-4 4.6-5.6 5.4-1.6.6 3 2.2 4.2 5.8 1.4"/><path class="fw" d="M26.4 31.6L40.6 17.4l5 5-14.2 14.2-6.8 1.8z"/><path d="M37.4 20.6l5 5M24.6 38.4l1.8-6.8"/></svg><h3>People remain responsible.</h3><span class="num mono">03</span></li>
+    </ol>
+    <div class="after">
+      <p>AI can help with the work. The judgment stays with people.</p>
+    </div>
   </div>
 </section>
 
